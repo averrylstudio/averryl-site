@@ -856,3 +856,15 @@ p { margin: 0 0 1rem; }
   background: transparent;
 }
 .hero-portrait picture, .about-photo picture { display: block; }
+
+/* Extra scrapbook portraits */
+.hero-split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.hero-split .side-portrait img, .review-split .side-portrait img { width: 100%; height: auto; display: block; }
+.hero-split .side-portrait { max-width: 22rem; justify-self: end; transform: rotate(2deg); }
+.review-split { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.review-split .review-inner { max-width: 42rem; }
+.review-split .side-portrait { max-width: 19rem; justify-self: end; transform: rotate(-2deg); position: relative; z-index: 1; }
+@media (max-width: 960px) {
+  .hero-split, .review-split { grid-template-columns: 1fr; }
+  .hero-split .side-portrait, .review-split .side-portrait { justify-self: start; width: min(100%, 16rem); }
+}
