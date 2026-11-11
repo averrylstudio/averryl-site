@@ -868,3 +868,13 @@ p { margin: 0 0 1rem; }
   .hero-split, .review-split { grid-template-columns: 1fr; }
   .hero-split .side-portrait, .review-split .side-portrait { justify-self: start; width: min(100%, 16rem); }
 }
+
+/* Contact page: circles like the homepage hero + centred photo on small screens */
+.page-hero.has-circles { position: relative; overflow: hidden; }
+.page-hero.has-circles::before, .page-hero.has-circles::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.page-hero.has-circles::before { width: min(28rem, 70vw); height: min(28rem, 70vw); background: var(--sage-soft); top: -8rem; right: -7rem; opacity: 0.85; }
+.page-hero.has-circles::after { width: 13rem; height: 13rem; background: var(--clay-soft); bottom: -4.5rem; left: -4.5rem; opacity: 0.7; }
+.page-hero.has-circles .wrap { position: relative; z-index: 1; }
+@media (max-width: 960px) {
+  .hero-split .side-portrait { justify-self: center; margin-inline: auto; width: min(100%, 17rem); }
+}
