@@ -841,3 +841,18 @@ p { margin: 0 0 1rem; }
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Scrapbook cut-out portrait */
+.hero-portrait::before, .hero-portrait::after { display: none; }
+.hero-portrait img.scrapbook,
+.about-photo img.scrapbook {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.hero-portrait picture, .about-photo picture { display: block; }
